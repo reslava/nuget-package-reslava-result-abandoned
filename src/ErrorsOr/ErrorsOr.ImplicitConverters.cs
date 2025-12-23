@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ErrorsOr;
+﻿namespace ErrorsOr;
 
 public readonly partial record struct ErrorsOr<TValue> : IErrorsOr<TValue>
 {
