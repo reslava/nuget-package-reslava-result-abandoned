@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="../ConsoleTests/ConsoleTests.csproj" Id="6318ad98-51bd-416d-a02e-590e8984d832" />
+    <Project Path="src/ErrorsOr.csproj" />
+  </Folder>
+</Solution>
