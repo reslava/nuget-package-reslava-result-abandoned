@@ -1,4 +1,4 @@
-﻿namespace ErrorsOr;
+﻿namespace Result;
 
 public readonly record struct Error
 {

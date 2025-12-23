@@ -1,22 +1,22 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace ErrorsOr;
+namespace Result;
 
-public readonly partial record struct ErrorsOr<TValue> : IErrorsOr<TValue>
+public readonly partial record struct Result<TValue> : IErrorsOr<TValue>
 {
     private readonly TValue? _value = default;
     private readonly List<Error>? _errors = null;    
     
-    public ErrorsOr ()
+    public Result ()
     {
         throw new InvalidOperationException ("Use Factory instead of default constructor of ErrorsOr<TValue>.");
     }
-    private ErrorsOr (Error error)
+    private Result (Error error)
     {
         _errors = [error];
     }
 
-    private ErrorsOr (List<Error> errors)
+    private Result (List<Error> errors)
     {
         if (errors is null)
         {
@@ -31,7 +31,7 @@ public readonly partial record struct ErrorsOr<TValue> : IErrorsOr<TValue>
         _errors = errors;
     }
 
-    private ErrorsOr (TValue value)
+    private Result (TValue value)
     {
         if (value is null)
         {

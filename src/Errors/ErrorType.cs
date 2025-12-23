@@ -1,4 +1,4 @@
-﻿namespace ErrorsOr;
+﻿namespace Result;
 
 // Error types
 public enum ErrorType
