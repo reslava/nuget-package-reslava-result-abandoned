@@ -2,11 +2,17 @@
 
 > 🚧 **Under Construction** - This library is currently in active development
 
-A simple, clean and robust C# .NET library implementing the Result pattern for elegant error handling without exceptions.
+A very simple, clean, and robust C# .NET library that implements the Result pattern for elegant error handling that minimises the use of exceptions.
 
-![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
+<div align="center">
+
+![.NET](https://img.shields.io/badge/.NET-512BD4?logo=dotnet&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-239120?&logo=csharp&logoColor=white)
+[![GitHub contributors](https://img.shields.io/github/contributors/reslava/REslava.Result)](https://GitHub.com/reslava/REslava.Result/graphs/contributors/) 
+[![GitHub Stars](https://img.shields.io/github/stars/reslava/REslava.Result)](https://github.com/reslava/REslava.Result/stargazers) 
+[![GitHub license](https://img.shields.io/github/license/reslava/REslava.Result)](https://github.com/reslava/REslava.Result/blob/master/LICENSE.txt)
+
+</div>
 
 ## 📋 Table of Contents
 
