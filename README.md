@@ -17,7 +17,7 @@ A very simple, clean, and robust C# .NET library that implements the Result patt
 ## 📋 Table of Contents
 
 - [Overview](#-overview)
-- [References](#-refences)
+- [References](#-references)
 
 ## 🎯 Overview
 
