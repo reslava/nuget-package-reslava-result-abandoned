@@ -22,5 +22,5 @@ public readonly partial record struct Result<TValue> : IResult<TValue>
         ArgumentNullException.ThrowIfNull (errors);
 
         return new Result<TValue> ((List<Error>)[.. errors]);
-    }
+    }    
 }

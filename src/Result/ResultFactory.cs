@@ -25,5 +25,5 @@ public static class ResultFactory
     public static Result<TValue> From <TValue>(TValue value)
     {
         return value;
-    }
+    }    
 }

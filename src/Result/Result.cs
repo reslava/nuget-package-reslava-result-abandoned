@@ -3,12 +3,18 @@
 namespace Result;
 
 public readonly partial record struct Result<TValue> : IResult<TValue>
-{
+{    
     private readonly TValue? _value = default;
-    private readonly List<Error>? _errors = null;    
-    
-    public Result ()
+    private readonly List<Error>? _errors = null;
+    private readonly SuccessType _successType = SuccessType.Success;
+
+    public SuccessType SuccessType
     {
+        get { return _successType; } 
+    }
+
+    public Result ()
+    {        
         throw new InvalidOperationException ("Use Factory methods instead of default constructor.");
     }
     private Result (Error error)
