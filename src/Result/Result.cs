@@ -6,9 +6,9 @@ public class Result
     public bool IsSuccess { get; }
     public bool IsFailure => !IsSuccess;
     public List<Error> Errors = [Error.None];
-    public SuccessType SuccessType = SuccessType.Success;
+    public SuccessType SuccessType { get; } = SuccessType.Success;
 
-    internal Result (bool isSuccess, Error error)
+    internal Result (bool isSuccess, Error error, SuccessType successType = SuccessType.Success)
     {
         if (isSuccess && error != Error.None ||
             !isSuccess && error == Error.None)
@@ -18,6 +18,7 @@ public class Result
 
         IsSuccess = isSuccess;
         Errors = [error];
+        SuccessType = successType;
     }
     public Result (bool isSuccess, List<Error> errors)
     {
@@ -37,11 +38,14 @@ public class Result
     public Error Error => Errors[0];
 
     public static Result Success () => new (true, Error.None);
-    
+    public static Result Success (SuccessType successType) => new (true, Error.None, successType);
+
     public static Result Failure (Error error) => new (false, error);
 
     public static Result<TValue> Success<TValue> (TValue value) =>
-        new (value, true, Error.None);   
+        new (value, true, Error.None);
+    public static Result<TValue> Success<TValue> (TValue value, SuccessType successType) =>
+        new (value, true, Error.None, successType);
 
     public static Result<TValue> Failure<TValue> (Error error) =>
         new (default, false, error);
@@ -51,13 +55,13 @@ public class Result<TValue> : Result
 {
     private readonly TValue? _value;
 
-    internal Result (TValue? value, bool isSuccess, Error error)
-        : base (isSuccess, error)
+    internal Result (TValue? value, bool isSuccess, Error error, SuccessType successType = SuccessType.Success)
+        : base (isSuccess, error, successType)
     {
         _value = value;
     }
 
-    internal Result (TValue? value, bool isSuccess, List<Error> errors)
+    internal Result (TValue? value, bool isSuccess, List<Error> errors, SuccessType successType = SuccessType.Success)
         : base (isSuccess, errors)
     {
         _value = value;
